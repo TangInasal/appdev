@@ -33,7 +33,7 @@
             
             <div class="search-container">
                 <h2>Subjects Taken</h2>
-                <input type="text" id="searchBar" placeholder="Search subjects...">
+                <input type="text" id="searchBar" placeholder="Search for subjects">
                 <ul id="subjectsList"></ul>
             </div>
         </div>
@@ -50,9 +50,9 @@
                     
                     function displaySubjects(filteredSubjects) {
                         subjectsList.innerHTML = "";
-                        filteredSubjects.slice(0, 5).forEach(subject => { // Limit to 5 items
+                        filteredSubjects.slice(0, 5).forEach(subject => { // limit to 5 items before mag search
                             let li = document.createElement("li");
-                            li.textContent = subject.description; // Only show subject code
+                            li.textContent = subject.description; // show subject description pag search
                             subjectsList.appendChild(li);
                         });
                     }
@@ -61,7 +61,7 @@
                         const searchText = searchBar.value.toLowerCase();
                         const filteredSubjects = subjects.filter(subject =>
                             subject.description.toLowerCase().includes(searchText) ||
-                            subject.year_level.toLowerCase().includes(searchText) // Filter by year level
+                            subject.year_level.toLowerCase().includes(searchText) // Filter for year_level value
                             
                         );
                         displaySubjects(filteredSubjects);
