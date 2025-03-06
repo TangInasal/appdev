@@ -11,7 +11,7 @@
         <div class="logo">AppDev</div>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="https://diox-portfolio.vercel.app/" target="_blank" class="portfolio-link"> Main Portfolio</a>
+            <li><a href="https://diox-portfolio.vercel.app/" target="_blank" class="portfolio-link"> Main Portfolio</a></li>
             <li><a href="#">Resume</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Contact</a></li>
@@ -30,7 +30,47 @@
                 <a href="./act1/act1.html" class="activity-button">Activity 1</a>
                 <a href="./act2/act2.html" class="activity-button">Activity 2</a>
             </div>
+            
+            <div class="search-container">
+                <h2>Subjects Taken</h2>
+                <input type="text" id="searchBar" placeholder="Search subjects...">
+                <ul id="subjectsList"></ul>
+            </div>
         </div>
     </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("courses.json")
+                .then(response => response.json())
+                .then(data => {
+                    const subjectsList = document.getElementById("subjectsList");
+                    const searchBar = document.getElementById("searchBar");
+                    let subjects = data.courses;
+                    
+                    function displaySubjects(filteredSubjects) {
+                        subjectsList.innerHTML = "";
+                        filteredSubjects.slice(0, 5).forEach(subject => { // Limit to 5 items
+                            let li = document.createElement("li");
+                            li.textContent = subject.description; // Only show subject code
+                            subjectsList.appendChild(li);
+                        });
+                    }
+                    
+                    searchBar.addEventListener("keyup", function() {
+                        const searchText = searchBar.value.toLowerCase();
+                        const filteredSubjects = subjects.filter(subject =>
+                            subject.description.toLowerCase().includes(searchText) ||
+                            subject.year_level.toLowerCase().includes(searchText) // Filter by year level
+                            
+                        );
+                        displaySubjects(filteredSubjects);
+                    });
+                    
+                    displaySubjects(subjects);
+                })
+                .catch(error => console.error("Error fetching subjects:", error));
+        });
+    </script>
 </body>
 </html>
