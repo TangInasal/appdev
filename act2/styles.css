@@ -1,7 +1,6 @@
 #subjects-taken .card-body {
     height: 150px;  /* Set a strict height */
     overflow-y: auto; /* Enable scrolling */
-    border: 1px solid red; /* Temporary border to check layout */
     display: block;
 }
 
