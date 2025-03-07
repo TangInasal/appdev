@@ -1,0 +1,88 @@
+/* Modernized Styles */
+body {
+    background: #181818;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.search-container {
+    background: #252525;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    border: 2px solid #007bff;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.search-container h2 {
+    color: #00bfff;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Search Bar Styling */
+#searchBar {
+    width: 90%;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: 2px solid #007bff;
+    border-radius: 30px;
+    outline: none;
+    background-color: #2a2a2a;
+    color: white;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+
+#searchBar:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+/* Courses List */
+#subjectsList {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #252525;
+}
+
+#subjectsList li {
+    background: #1e1e1e;
+    padding: 12px;
+    margin: 6px auto;
+    border-radius: 8px;
+    max-width: 550px;
+    transition: 0.3s;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+}
+
+#subjectsList li:hover {
+    background: #007bff;
+    color: white;
+    border-left: 4px solid #00bfff;
+    transform: translateX(5px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
