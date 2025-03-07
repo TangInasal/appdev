@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body> <!-- You were missing this! -->
+<body>
     <ul class="nav">
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
@@ -17,11 +17,13 @@
         <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <div class="page-content"> <!-- Wrap content properly -->
-        <div class="card" id="about">
-            <p class="card-header">About</p>
-            <p class="card-body">Hello! Tell us about yourself.</p>
-        </div>
+	<div class="card" id="subjects-taken">
+	    <p class="card-header">Subjects Taken</p>
+	    <div class="card-body">
+	        <ul id="subjectsList"></ul>
+	    </div>
+	</div>
+
         <div class="card" id="education">
             <p class="card-header">Education</p>
             <p class="card-body">Tell us about your education</p>
@@ -37,5 +39,7 @@
     </div>
 
     <footer>I am a footer, the last section of this page</footer>
+
+    <script src=../script.js></script>
 </body>
 </html>

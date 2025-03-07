@@ -1,3 +1,26 @@
+#subjects-taken .card-body {
+    height: 150px;  /* Set a strict height */
+    overflow-y: auto; /* Enable scrolling */
+    border: 1px solid red; /* Temporary border to check layout */
+    display: block;
+}
+
+#subjectsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 100%;
+}
+
+#subjectsList li {
+    padding: 8px;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+
 .page-content {
   padding-top: 30px;
   overflow: hidden;
